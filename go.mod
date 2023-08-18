@@ -1,3 +1,3 @@
-module github.com/unum-cloud/usearch/golang
+module github.com/davvard/usearch-go/
 
-go 1.19
+go 1.16
