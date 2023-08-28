@@ -5,6 +5,8 @@
 ## Installation
 
 ```
+wget https://github.com/gurgenyegoryan/usearch/releases/download/v0.1.1/usearch.deb
+sudo dpkg -i usearch.deb
 go get github.com/davvard/usearch-go
 ```
 
