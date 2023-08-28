@@ -286,11 +286,11 @@ func (index *Index) Get(key Key) (vector []float32, err error) {
 
 	vector = make([]float32, index.config.Dimensions)
 	var errorMessage *C.char
-	found := bool(C.usearch_get((C.usearch_index_t)(unsafe.Pointer(index.opaque_handle)), (C.usearch_key_t)(key), unsafe.Pointer(&vector[0]), C.usearch_scalar_f32_k, (*C.usearch_error_t)(&errorMessage)))
+	found := uint(C.usearch_get((C.usearch_index_t)(unsafe.Pointer(index.opaque_handle)), (C.usearch_key_t)(key), 1, unsafe.Pointer(&vector[0]), C.usearch_scalar_f32_k, (*C.usearch_error_t)(&errorMessage)))
 	if errorMessage != nil {
 		return nil, errors.New(C.GoString(errorMessage))
 	}
-	if !found {
+	if found == 0 {
 		return nil, nil
 	}
 	return vector, nil
