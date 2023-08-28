@@ -6,8 +6,6 @@ import (
 )
 
 /*
-#cgo linux LDFLAGS: -L${SRCDIR}/libs/linux -lusearch
-#cgo windows LDFLAGS: -L${SRCDIR}/libs/windows -lusearch
 #include "usearch.h"
 #include <stdlib.h>
 */
