@@ -290,7 +290,7 @@ func (index *Index) Get(key Key, count uint) (vectors []float32, err error) {
 		panic("Index is uninitialized")
 	}
 
-	vectors = make([]float32, index.config.Dimensions)
+	vectors = make([]float32, index.config.Dimensions * count)
 	var errorMessage *C.char
 	found := uint(C.usearch_get((C.usearch_index_t)(unsafe.Pointer(index.opaque_handle)), (C.usearch_key_t)(key), (C.size_t)(count), unsafe.Pointer(&vectors[0]), C.usearch_scalar_f32_k, (*C.usearch_error_t)(&errorMessage)))
 	if errorMessage != nil {
