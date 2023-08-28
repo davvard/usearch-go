@@ -41,10 +41,3 @@ func main() {
 	fmt.Println(keys, distances)
 }
 ```
-
-
-## Linking
-```
-CGO_ENABLED=1 CGO_LDFLAGS="-L/path/to/lib -lusearch" CGO_CFLAGS="-I/path/to/include" go run example.go 
-```
-
