@@ -1,6 +1,4 @@
-# usearch-go
-
-`usearch-go` is a Go library that provides functionality for creating and utilizing similarity search indexes.
+# USearch for GoLang
 
 ## Installation
 
@@ -10,7 +8,7 @@ sudo dpkg -i usearch.deb
 go get github.com/davvard/usearch-go
 ```
 
-## Example Usage
+## Quickstart
 
 ```go
 package main
@@ -45,7 +43,7 @@ func main() {
 ```
 
 
-## Linking USearch
+## Linking
 ```
 CGO_ENABLED=1 CGO_LDFLAGS="-L/path/to/lib -lusearch" CGO_CFLAGS="-I/path/to/include" go run example.go 
 ```
